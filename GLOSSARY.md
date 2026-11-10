@@ -1,6 +1,6 @@
 # Glossary and Feature Model Notation
 
-This glossary explains the feature-model notation and the terms used in the EDT variability model. Feature names follow the labels used in the public tree artifacts, usually with underscores.
+This glossary explains the feature-model notation and the terms used in the DT variability model. Feature names follow the labels used in the public tree artifacts, usually with underscores.
 
 ## Feature Model Notation
 
