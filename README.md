@@ -25,16 +25,15 @@ This feature model makes the design space explicit by using:
 
 ## FeatureIDE Models and Example Configurations
 
-Both models are FeatureIDE projects. In Eclipse with FeatureIDE installed, use *File > Import > Existing Projects into Workspace* and select the project folder.
+The model is a FeatureIDE project. In Eclipse with FeatureIDE installed, use *File > Import > Existing Projects into Workspace* and select the `FeatureModelDT_v2` folder. Both example configurations are in its `configs/` folder.
 
 | What | Path |
 |---|---|
 | DT feature model (339 features, 17 cross-tree constraints) | [`DT-Builder-VariabilityModel/FeatureModelDT_v2/model.xml`](DT-Builder-VariabilityModel/FeatureModelDT_v2/model.xml) |
 | Smart warehouse example (90 selected features) | [`DT-Builder-VariabilityModel/FeatureModelDT_v2/configs/smart_warehouse.xml`](DT-Builder-VariabilityModel/FeatureModelDT_v2/configs/smart_warehouse.xml) |
-| Smart home subset model (62 features) | [`DT-Builder-VariabilityModel/FeatureModelDT_Subset_For_SmartHome/model.xml`](DT-Builder-VariabilityModel/FeatureModelDT_Subset_For_SmartHome/model.xml) |
-| Smart home example (59 selected features) | [`DT-Builder-VariabilityModel/FeatureModelDT_Subset_For_SmartHome/configs/smart_home_historical.xml`](DT-Builder-VariabilityModel/FeatureModelDT_Subset_For_SmartHome/configs/smart_home_historical.xml) |
+| Smart home example (76 selected features) | [`DT-Builder-VariabilityModel/FeatureModelDT_v2/configs/smart_home.xml`](DT-Builder-VariabilityModel/FeatureModelDT_v2/configs/smart_home.xml) |
 
-The examples are constructed engineering examples, not implemented systems.
+Both examples are configured on the same model. They are constructed engineering examples, not implemented systems.
 
 ## Model Structure
 
@@ -87,11 +86,11 @@ The model includes 17 constraints that capture dependencies across separate bran
 | C17 | `Data_Services` | `Data` |
 | C18 | `Real_Time_Sync` | `Real_Time_Processing` |
 
-The rationale for each constraint is in [`evidence/constraint_rationale.json`](evidence/constraint_rationale.json), and the meaning of the twinning levels and feedback-loop features is in [`evidence/semantic_decisions.md`](evidence/semantic_decisions.md). The constraints are author-defined model rules; they are not expert-validated.
+The rationale for each constraint is in [`evidence/constraint_rationale.json`](evidence/constraint_rationale.json), and short feature definitions are in [`evidence/feature_glossary.md`](evidence/feature_glossary.md). The constraints are author-defined model rules; they are not expert-validated.
 
 ## Checking the Model
 
-`python3 tools/run_feature_model_analysis.py` runs the model and the scenarios in [`evidence/scenarios.tsv`](evidence/scenarios.tsv) through the FeatureIDE 3.12 library (Java 21 and an Eclipse installation with FeatureIDE are required). The recorded result is in [`evidence/analysis.json`](evidence/analysis.json): the model is satisfiable, with no dead or false-optional features and no redundant constraints, and all 61 scenario records match their expected outcomes.
+`python3 tools/run_feature_model_analysis.py` runs the model and the scenarios in [`evidence/scenarios.tsv`](evidence/scenarios.tsv) through the FeatureIDE 3.12 library (Java 21 and an Eclipse installation with FeatureIDE are required). The recorded result is in [`evidence/analysis.json`](evidence/analysis.json): the model is satisfiable, with no dead or false-optional features and no redundant constraints, and all 62 scenario records match their expected outcomes.
 
 ## Regenerating Visuals
 

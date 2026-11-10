@@ -1,2 +1,0 @@
-# id	expected	assumptions	export
-H1-historical	SAT	+Digital_Model,+StateCharts,+Data,+Code_Generation,+Digital_Shadow,+Real_Time_Sync,+Data_Processing,+AI,+Anomaly_Detection,+Analysis,+Digital_Twin,+Human_Actuated,+Human_Supervised,+Single_board_Controllers,+Low_Level,+Actuator,+LED,+Alarm,+Buzzer,+Servo,+Sensors,+Flame,+Heat,+Ultrasonic,+PIR,+LDR,+Temperature,+Manual_Code,+M_2_C,+User_Interface,+Dashboard,+App,+Android,+Web,+Cloud_Integration,+GCP,+Online,+Websocket,+HTTP	smart_home_historical
