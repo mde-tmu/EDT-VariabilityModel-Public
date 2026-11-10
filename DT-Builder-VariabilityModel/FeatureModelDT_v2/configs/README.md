@@ -1,17 +1,21 @@
-# Complete FeatureIDE configuration
+# Complete FeatureIDE configurations
 
-This configuration targets `FeatureModelDT_v2/model.xml`.
+These configurations target `FeatureModelDT_v2/model.xml`.
 
-- `smart_warehouse.xml`: 90 selected features; supervised software command
-  coupling to the edge controller, including `Digital_Twin`, `Command_Control` and
-  `Human_Supervised`.
+- `smart_warehouse.xml`: 90 selected features. Supervised software command
+  coupling to an edge controller (`Digital_Twin`, `Command_Control`,
+  `Human_Supervised`), a single-board edge computer, MQTT as the only
+  communication protocol, local networking plus cloud history, streaming/API
+  integration, and dashboard/web-app choices.
+- `smart_home.xml`: 76 selected features. A statechart model with code
+  generation, a single-board controller with home sensors and actuators, app and
+  dashboard interfaces, cloud connectivity, and human-actuated or
+  human-supervised commands.
 
-It uses a single-board edge computer, MQTT as the only communication protocol,
-mixed high-/low-level interfaces, local networking plus cloud history,
-streaming/API integration, and dashboard/web-app choices. It is a constructed
-engineering example, not an implemented system or evidence of usefulness/safety.
+Both are constructed engineering examples, not implemented systems or evidence of
+usefulness/safety.
 
 All 339 feature states are explicit manual selected/unselected values. FeatureIDE
-3.12.0 XMLConfFormat writes and re-imports the file, and ConfigurationAnalyzer
+3.12.0 XMLConfFormat writes and re-imports the files, and ConfigurationAnalyzer
 checks completeness and validity. Entries that the requirements leave open use
 deterministic deselection-preferred completion, not ranking.

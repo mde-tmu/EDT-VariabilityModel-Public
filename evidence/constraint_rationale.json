@@ -12,7 +12,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "Digital_Shadow",
       "Data",
@@ -41,7 +41,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "Digital_Twin",
       "Digital_Shadow",
@@ -69,7 +69,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "Federated_Twin",
       "Federated_Digital_Twin_Architecture",
@@ -93,7 +93,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "Cloud_Layer",
       "Cloud_Integration"
@@ -115,7 +115,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "source_identity",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "Edge_AI_Intelligence",
       "Edge_Layer"
@@ -137,7 +137,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "source_identity",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "IEC_62541",
       "OPC_UA"
@@ -159,7 +159,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "source_identity",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "ISO_IEC_19514_SysML",
       "SysML"
@@ -181,7 +181,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "source_identity",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "ISO_IEC_19505_UML",
       "UML"
@@ -203,7 +203,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "source_identity",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "ISO_IEC_19510_BPMN",
       "BPMN"
@@ -230,7 +230,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "Hybrid_Edge_Fog_Cloud",
       "Edge_Layer",
@@ -256,7 +256,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "Streaming_Integration",
       "Data_Streaming"
@@ -278,7 +278,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "API_Based_Integration",
       "API_Services"
@@ -300,7 +300,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "Cloud_Stack_Architecture",
       "Cloud_Layer"
@@ -322,7 +322,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "Kubernetes_Edge",
       "Edge_Layer"
@@ -349,7 +349,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "OpenAPI",
       "GraphQL",
@@ -377,7 +377,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "Data_Services",
       "Data"
@@ -399,7 +399,7 @@
     "scope": "One complete DT solution; presence of a capability or an explicit design concern, not implementation certification.",
     "evidence_status": "model_definition",
     "expert_validation": "not established",
-    "feature_definitions": "feature_glossary.md and semantic_decisions.md; remaining identities retain their feature names.",
+    "feature_definitions": "feature_glossary.md; remaining identities retain their feature names.",
     "features": [
       "Real_Time_Sync",
       "Real_Time_Processing"

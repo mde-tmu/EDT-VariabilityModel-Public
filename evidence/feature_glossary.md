@@ -2,7 +2,7 @@
 
 Definitions are scoped author interpretations unless an external identity source
 is stated. Complete paths/group cardinalities are in the generated
-`feature-model/full-feature-model.md`; source candidates are in feature_mapping.json.
+`feature-model/full-feature-model.md`.
 Selecting a capability records its inclusion/need, not a verified implementation.
 
 | Term | Meaning within one complete configured solution |

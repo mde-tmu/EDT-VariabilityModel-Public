@@ -1,5 +1,6 @@
 # id	expected	signed assumptions	complete export
 W-A	SAT	+SysML,+Single_Board_Computer,+High_Level,+Low_Level,+Proximity_Sensor,+Temperature_Sensor,+Humidity_Sensor,+RFID,+Manual_Code,+Layered_Architecture,+IoT_Based_Architecture,+Edge_Layer,+Cloud_Layer,+Local_Network,+GCP,+MQTT,+Streaming_Integration,+API_Based_Integration,+JSON,+Data_Acquisition_and_Ingestion,+Temporal_Data_Store,+Dashboard,+Interactive_Dashboard,+Web,+Access_Control,+Audit_Logs,+Encryption,+Reporting,+Alerts_Notifications,+Linux_Embedded,+Docker,+Real_Time_Sync,+Anomaly_Detection,+Rule_Based_Reasoning,+Digital_Twin,+Human_Supervised,+Command_Control,+DC_Motor,+Alarm,+Servo_Motor,+Relay,+ISO_IEC_19514_SysML,-Optimization	smart_warehouse
+H-A	SAT	+StateCharts,+Data,+Code_Generation,+Digital_Shadow,+Real_Time_Sync,+Artificial_Intelligence_AI,+Anomaly_Detection,+Analysis,+Digital_Twin,+Human_Actuated,+Human_Supervised,+Single_Board_Controller,+Low_Level,+LED,+Alarm,+Buzzer,+Servo_Motor,+Flame_Sensor,+Heat_Sensor,+Ultrasonic_Sensor,+PIR_Sensor,+LDR_Sensor,+Temperature_Sensor,+Manual_Code,+Model_To_Code,+IoT_Based_Architecture,+Edge_Layer,+Cloud_Layer,+Dashboard,+Android,+Web,+GCP,+Online,+WebSocket,+HTTP,+API_Based_Integration,+Alerts_Notifications	smart_home
 S0-root	SAT		
 S1-control-propagation	SAT	+Digital_Twin	
 S2-read-only-conflict	UNSAT	+Digital_Twin,-Command_Control	
