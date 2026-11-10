@@ -1,4 +1,4 @@
-# EDT Variability Model for Digital Twins of Cyber-Physical Systems
+# DT Variability Model for Digital Twins of Cyber-Physical Systems
 
 This repository provides public artifacts for a feature model that supports the design and configuration of digital twins (DTs) for cyber-physical systems (CPSs).
 
