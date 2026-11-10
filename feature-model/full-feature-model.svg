@@ -363,16 +363,16 @@
 <!-- n39&#45;&gt;n40 -->
 <g id="edge40" class="edge">
 <title>n39&#45;&gt;n40</title>
-<path fill="none" stroke="#777777" stroke-width="1.5" d="M5603.75,-278.36C5598.95,-277.27 5596,-276.6 5596,-276.6 5596,-276.6 4845,-256.6 4845,-256.6 4845,-256.6 4376.74,-228.59 4310.27,-223.42"/>
-<polygon fill="#777777" stroke="#777777" stroke-width="1.5" points="4310.45,-221.51 4304.79,-222.91 4310.09,-225.34 4310.45,-221.51"/>
-<text xml:space="preserve" text-anchor="middle" x="4849.5" y="-246.15" font-family="Helvetica,sans-Serif" font-size="11.00">M</text>
+<path fill="none" stroke="#777777" stroke-width="1.5" d="M5603.75,-278.36C5598.95,-277.27 5596,-276.6 5596,-276.6 5596,-276.6 4846,-256.6 4846,-256.6 4846,-256.6 4374.91,-228.47 4309.87,-223.39"/>
+<polygon fill="#777777" stroke="#777777" stroke-width="1.5" points="4310.45,-221.51 4304.79,-222.91 4310.09,-225.35 4310.45,-221.51"/>
+<text xml:space="preserve" text-anchor="middle" x="4850.5" y="-246.15" font-family="Helvetica,sans-Serif" font-size="11.00">M</text>
 </g>
 <!-- n39&#45;&gt;n41 -->
 <g id="edge41" class="edge">
 <title>n39&#45;&gt;n41</title>
-<path fill="none" stroke="#777777" stroke-width="1.5" d="M5603.75,-278.36C5598.95,-277.27 5596,-276.6 5596,-276.6 5596,-276.6 5092,-256.6 5092,-256.6 5092,-256.6 4428,-224.6 4428,-224.6 4428,-224.6 4427.81,-224.54 4427.45,-224.42"/>
-<polygon fill="#777777" stroke="#777777" stroke-width="1.5" points="4428.27,-222.66 4422.45,-222.8 4427.09,-226.33 4428.27,-222.66"/>
-<text xml:space="preserve" text-anchor="middle" x="5096.5" y="-246.15" font-family="Helvetica,sans-Serif" font-size="11.00">M</text>
+<path fill="none" stroke="#777777" stroke-dasharray="5,2" d="M5603.75,-278.36C5598.95,-277.27 5596,-276.6 5596,-276.6 5596,-276.6 5092.75,-256.6 5092.75,-256.6 5092.75,-256.6 4428,-224.6 4428,-224.6 4428,-224.6 4427.57,-224.46 4426.79,-224.21"/>
+<polygon fill="#777777" stroke="#777777" points="4427.55,-222.43 4421.73,-222.57 4426.37,-226.09 4427.55,-222.43"/>
+<text xml:space="preserve" text-anchor="middle" x="5096.88" y="-246.15" font-family="Helvetica,sans-Serif" font-size="11.00">O</text>
 </g>
 <!-- n39&#45;&gt;n42 -->
 <g id="edge42" class="edge">
@@ -2948,7 +2948,7 @@
 <title>n90</title>
 <path fill="#bfe9f4" stroke="#707070" d="M8963.51,-417.25C8963.51,-417.25 8878.49,-417.25 8878.49,-417.25 8872.49,-417.25 8866.49,-411.25 8866.49,-405.25 8866.49,-405.25 8866.49,-389.05 8866.49,-389.05 8866.49,-383.05 8872.49,-377.05 8878.49,-377.05 8878.49,-377.05 8963.51,-377.05 8963.51,-377.05 8969.51,-377.05 8975.51,-383.05 8975.51,-389.05 8975.51,-389.05 8975.51,-405.25 8975.51,-405.25 8975.51,-411.25 8969.51,-417.25 8963.51,-417.25"/>
 <text xml:space="preserve" text-anchor="middle" x="8921" y="-398.45" font-family="Helvetica,sans-Serif" font-size="16.00">System_Type</text>
-<text xml:space="preserve" text-anchor="middle" x="8921" y="-381.95" font-family="Helvetica,sans-Serif" font-size="16.00">(xor)</text>
+<text xml:space="preserve" text-anchor="middle" x="8921" y="-381.95" font-family="Helvetica,sans-Serif" font-size="16.00">(or)</text>
 </g>
 <!-- n91 -->
 <g id="node92" class="node">
@@ -3596,14 +3596,14 @@
 <title>n193</title>
 <path fill="#ffd1a6" stroke="#707070" d="M16302.14,-417.25C16302.14,-417.25 16199.86,-417.25 16199.86,-417.25 16193.86,-417.25 16187.86,-411.25 16187.86,-405.25 16187.86,-405.25 16187.86,-389.05 16187.86,-389.05 16187.86,-383.05 16193.86,-377.05 16199.86,-377.05 16199.86,-377.05 16302.14,-377.05 16302.14,-377.05 16308.14,-377.05 16314.14,-383.05 16314.14,-389.05 16314.14,-389.05 16314.14,-405.25 16314.14,-405.25 16314.14,-411.25 16308.14,-417.25 16302.14,-417.25"/>
 <text xml:space="preserve" text-anchor="middle" x="16251" y="-398.45" font-family="Helvetica,sans-Serif" font-size="16.00">NetworkStorage</text>
-<text xml:space="preserve" text-anchor="middle" x="16251" y="-381.95" font-family="Helvetica,sans-Serif" font-size="16.00">(xor)</text>
+<text xml:space="preserve" text-anchor="middle" x="16251" y="-381.95" font-family="Helvetica,sans-Serif" font-size="16.00">(or)</text>
 </g>
 <!-- n194 -->
 <g id="node195" class="node">
 <title>n194</title>
 <path fill="#ffd1a6" stroke="#707070" d="M16154.89,-316.8C16154.89,-316.8 16063.11,-316.8 16063.11,-316.8 16057.11,-316.8 16051.11,-310.8 16051.11,-304.8 16051.11,-304.8 16051.11,-288.6 16051.11,-288.6 16051.11,-282.6 16057.11,-276.6 16063.11,-276.6 16063.11,-276.6 16154.89,-276.6 16154.89,-276.6 16160.89,-276.6 16166.89,-282.6 16166.89,-288.6 16166.89,-288.6 16166.89,-304.8 16166.89,-304.8 16166.89,-310.8 16160.89,-316.8 16154.89,-316.8"/>
 <text xml:space="preserve" text-anchor="middle" x="16109" y="-298" font-family="Helvetica,sans-Serif" font-size="16.00">Local_Storage</text>
-<text xml:space="preserve" text-anchor="middle" x="16109" y="-281.5" font-family="Helvetica,sans-Serif" font-size="16.00">(xor)</text>
+<text xml:space="preserve" text-anchor="middle" x="16109" y="-281.5" font-family="Helvetica,sans-Serif" font-size="16.00">(or)</text>
 </g>
 <!-- n195 -->
 <g id="node196" class="node">
@@ -3695,7 +3695,7 @@
 <title>n209</title>
 <path fill="#ffd1a6" stroke="#707070" d="M16419.76,-417.25C16419.76,-417.25 16342.24,-417.25 16342.24,-417.25 16336.24,-417.25 16330.24,-411.25 16330.24,-405.25 16330.24,-405.25 16330.24,-389.05 16330.24,-389.05 16330.24,-383.05 16336.24,-377.05 16342.24,-377.05 16342.24,-377.05 16419.76,-377.05 16419.76,-377.05 16425.76,-377.05 16431.76,-383.05 16431.76,-389.05 16431.76,-389.05 16431.76,-405.25 16431.76,-405.25 16431.76,-411.25 16425.76,-417.25 16419.76,-417.25"/>
 <text xml:space="preserve" text-anchor="middle" x="16381" y="-398.45" font-family="Helvetica,sans-Serif" font-size="16.00">DataStorage</text>
-<text xml:space="preserve" text-anchor="middle" x="16381" y="-381.95" font-family="Helvetica,sans-Serif" font-size="16.00">(xor)</text>
+<text xml:space="preserve" text-anchor="middle" x="16381" y="-381.95" font-family="Helvetica,sans-Serif" font-size="16.00">(or)</text>
 </g>
 <!-- n210 -->
 <g id="node211" class="node">

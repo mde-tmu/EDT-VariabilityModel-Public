@@ -6,7 +6,7 @@ The model represents DT design as a set of configurable features. It captures co
 
 ## Why This Model Exists
 
-Designing a DT requires many connected decisions. For example, selecting a full digital twin should also imply data, synchronization, reasoning support, and a lower twinning level. A flat checklist does not capture these dependencies well.
+Designing a DT requires many connected decisions. For example, selecting a full digital twin should also imply the lower twinning level, data and its acquisition, and a command path back to the physical system. A flat checklist does not capture these dependencies well.
 
 This feature model makes the design space explicit by using:
 
@@ -20,9 +20,21 @@ This feature model makes the design space explicit by using:
 - [Zoomable full-tree SVG](feature-model/full-feature-model.svg): best option for browsing and zooming in a browser.
 - [High-resolution PNG](feature-model/full-feature-model.png): bitmap preview/export of the full tree.
 - [Graphviz DOT source](feature-model/full-feature-model.dot): graph source used to generate the SVG and PNG.
+- [Browsable Markdown hierarchy](feature-model/full-feature-model.md): full parent-child structure and cross-tree constraints in a GitHub-readable format.
 - [Glossary and notation guide](GLOSSARY.md): explains feature-model notation and common DT/CPS terms used in the model.
 
-The editable FeatureIDE XML source model and example configurations are not included in this public artifact yet.
+## FeatureIDE Models and Example Configurations
+
+Both models are FeatureIDE projects. In Eclipse with FeatureIDE installed, use *File > Import > Existing Projects into Workspace* and select the project folder.
+
+| What | Path |
+|---|---|
+| DT feature model (339 features, 17 cross-tree constraints) | [`DT-Builder-VariabilityModel/FeatureModelDT_v2/model.xml`](DT-Builder-VariabilityModel/FeatureModelDT_v2/model.xml) |
+| Smart warehouse example (90 selected features) | [`DT-Builder-VariabilityModel/FeatureModelDT_v2/configs/smart_warehouse.xml`](DT-Builder-VariabilityModel/FeatureModelDT_v2/configs/smart_warehouse.xml) |
+| Smart home subset model (62 features) | [`DT-Builder-VariabilityModel/FeatureModelDT_Subset_For_SmartHome/model.xml`](DT-Builder-VariabilityModel/FeatureModelDT_Subset_For_SmartHome/model.xml) |
+| Smart home example (59 selected features) | [`DT-Builder-VariabilityModel/FeatureModelDT_Subset_For_SmartHome/configs/smart_home_historical.xml`](DT-Builder-VariabilityModel/FeatureModelDT_Subset_For_SmartHome/configs/smart_home_historical.xml) |
+
+The examples are constructed engineering examples, not implemented systems.
 
 ## Model Structure
 
@@ -53,23 +65,40 @@ For example, `Digital_Model` is mandatory under `Twinning_System` because every 
 
 ## Cross-Tree Constraints
 
-The model includes constraints that capture dependencies across separate branches:
+The model includes 17 constraints that capture dependencies across separate branches. Each one has the form "selecting the feature on the left requires the features on the right". C6 is retired, so the identifiers run from C1 to C18.
 
-- `Digital_Shadow` requires `Digital_Model` and `Data`.
-- `Digital_Twin` requires `Digital_Shadow`, `Reasoning_System`, `Data`, and `Real_Time_Sync`.
-- `Federated_Twin` requires `Federated_Digital_Twin_Architecture`, `Interoperability`, and `API_Services`.
-- `Cloud_Layer` requires `Cloud_Integration`.
-- `Edge_AI_Intelligence` requires `Edge_Layer` and `Edge_AI_Accelerator`.
-- `Formal_Methods` requires `Validation` and `Safety`.
-- `IEC_62541` requires `OPC_UA`.
+| ID | Selected feature | Required features |
+|---|---|---|
+| C1 | `Digital_Shadow` | `Data` and `Data_Acquisition_and_Ingestion` |
+| C2 | `Digital_Twin` | `Digital_Shadow` and `Command_Control` |
+| C3 | `Federated_Twin` | `Federated_Digital_Twin_Architecture` and `Interoperability` |
+| C4 | `Cloud_Layer` | `Cloud_Integration` |
+| C5 | `Edge_AI_Intelligence` | `Edge_Layer` |
+| C7 | `IEC_62541` | `OPC_UA` |
+| C8 | `ISO_IEC_19514_SysML` | `SysML` |
+| C9 | `ISO_IEC_19505_UML` | `UML` |
+| C10 | `ISO_IEC_19510_BPMN` | `BPMN` |
+| C11 | `Hybrid_Edge_Fog_Cloud` | `Edge_Layer` and `Fog_Layer` and `Cloud_Layer` |
+| C12 | `Streaming_Integration` | `Data_Streaming` |
+| C13 | `API_Based_Integration` | `API_Services` |
+| C14 | `Cloud_Stack_Architecture` | `Cloud_Layer` |
+| C15 | `Kubernetes_Edge` | `Edge_Layer` |
+| C16 | `OpenAPI` or `GraphQL` or `gRPC` | `API_Services` |
+| C17 | `Data_Services` | `Data` |
+| C18 | `Real_Time_Sync` | `Real_Time_Processing` |
 
-These constraints prevent incomplete configurations, such as selecting a full digital twin without synchronization or reasoning support.
+The rationale for each constraint is in [`evidence/constraint_rationale.json`](evidence/constraint_rationale.json), and the meaning of the twinning levels and feedback-loop features is in [`evidence/semantic_decisions.md`](evidence/semantic_decisions.md). The constraints are author-defined model rules; they are not expert-validated.
+
+## Checking the Model
+
+`python3 tools/run_feature_model_analysis.py` runs the model and the scenarios in [`evidence/scenarios.tsv`](evidence/scenarios.tsv) through the FeatureIDE 3.12 library (Java 21 and an Eclipse installation with FeatureIDE are required). The recorded result is in [`evidence/analysis.json`](evidence/analysis.json): the model is satisfiable, with no dead or false-optional features and no redundant constraints, and all 61 scenario records match their expected outcomes.
 
 ## Regenerating Visuals
 
-The included DOT file can be rendered with Graphviz:
+The Markdown and DOT views are generated from the FeatureIDE XML, and the DOT file is rendered with Graphviz:
 
 ```sh
+python3 tools/generate_feature_model_artifacts.py
 dot -Tsvg feature-model/full-feature-model.dot -o feature-model/full-feature-model.svg
 dot -Tpng -Gdpi=220 feature-model/full-feature-model.dot -o feature-model/full-feature-model.png
 ```

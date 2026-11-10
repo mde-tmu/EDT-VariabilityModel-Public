@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="true"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Digital_Twin_Builder">
+			<graphics key="collapsed" value="false"/>
+			<and mandatory="true" name="Twinning_System">
+				<graphics key="collapsed" value="false"/>
+				<and mandatory="true" name="Digital_Model">
+					<graphics key="collapsed" value="false"/>
+					<and mandatory="true" name="Languages">
+						<graphics key="collapsed" value="false"/>
+						<feature name="StateCharts"/>
+					</and>
+					<feature name="Data"/>
+					<feature name="Code_Generation"/>
+				</and>
+				<and name="Digital_Shadow">
+					<graphics key="collapsed" value="false"/>
+					<feature name="Real_Time_Sync"/>
+					<feature name="Partial_Data"/>
+					<and name="Reasoning_System">
+						<graphics key="collapsed" value="false"/>
+						<feature mandatory="true" name="Data_Processing"/>
+						<feature mandatory="true" name="Optimization"/>
+						<and name="Simulation">
+							<graphics key="collapsed" value="false"/>
+							<feature name="WhatIf_Analysis"/>
+						</and>
+						<and mandatory="true" name="Reasoning_Model">
+							<graphics key="collapsed" value="false"/>
+							<feature name="AI"/>
+						</and>
+						<and name="Types_of_Reasoning">
+							<graphics key="collapsed" value="false"/>
+							<feature name="Anomaly_Detection"/>
+						</and>
+						<feature name="Analysis"/>
+					</and>
+				</and>
+				<and name="Digital_Twin">
+					<graphics key="collapsed" value="false"/>
+					<and mandatory="true" name="Feedback_Loop">
+						<graphics key="collapsed" value="true"/>
+						<feature name="Human_Actuated"/>
+						<feature name="Human_Supervised"/>
+					</and>
+				</and>
+			</and>
+			<and mandatory="true" name="Cyber_Physical_System">
+				<graphics key="collapsed" value="false"/>
+				<and mandatory="true" name="Computation_Model">
+					<graphics key="collapsed" value="false"/>
+					<feature mandatory="true" name="Single_board_Controllers"/>
+				</and>
+				<and mandatory="true" name="System_Type">
+					<graphics key="collapsed" value="false"/>
+					<or mandatory="true" name="Low_Level">
+						<graphics key="collapsed" value="false"/>
+						<and name="Actuator">
+							<graphics key="collapsed" value="true"/>
+							<feature name="LED"/>
+							<feature name="Alarm"/>
+							<feature name="Buzzer"/>
+							<feature name="Servo"/>
+						</and>
+						<and name="Sensors">
+							<graphics key="collapsed" value="true"/>
+							<feature name="Flame"/>
+							<feature name="Heat"/>
+							<feature name="Ultrasonic"/>
+							<feature name="PIR"/>
+							<feature name="LDR"/>
+							<feature name="Temperature"/>
+						</and>
+						<or name="Logic_Model">
+							<graphics key="collapsed" value="false"/>
+							<feature name="Manual_Code"/>
+							<and name="Generated_Code">
+								<graphics key="collapsed" value="false"/>
+								<feature name="M_2_C"/>
+							</and>
+						</or>
+					</or>
+				</and>
+			</and>
+			<or name="User_Interface">
+				<graphics key="collapsed" value="false"/>
+				<and name="Dashboard">
+					<graphics key="collapsed" value="false"/>
+					<feature mandatory="true" name="Wrapper_Code"/>
+					<feature mandatory="true" name="Logic_Model_Code"/>
+				</and>
+				<and name="App">
+					<graphics key="collapsed" value="false"/>
+					<and mandatory="true" name="Platform">
+						<graphics key="collapsed" value="false"/>
+						<feature name="Android"/>
+						<feature name="Web"/>
+					</and>
+				</and>
+			</or>
+			<and mandatory="true" name="Connectivity_System">
+				<graphics key="collapsed" value="false"/>
+				<and mandatory="true" name="NetworkStorage">
+					<graphics key="collapsed" value="false"/>
+					<and mandatory="true" name="Cloud_Integration">
+						<graphics key="collapsed" value="false"/>
+						<feature mandatory="true" name="GCP"/>
+					</and>
+				</and>
+				<and name="DataStorage">
+					<graphics key="collapsed" value="false"/>
+					<feature mandatory="true" name="Online"/>
+				</and>
+				<and name="Communication_Protocols">
+					<graphics key="collapsed" value="false"/>
+					<feature name="Websocket"/>
+					<feature name="HTTP"/>
+				</and>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>Digital_Shadow</var>
+				<conj>
+					<var>Digital_Model</var>
+					<var>Data</var>
+				</conj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Digital_Twin</var>
+				<conj>
+					<var>Digital_Shadow</var>
+					<conj>
+						<var>Reasoning_System</var>
+						<conj>
+							<var>Data</var>
+							<var>Real_Time_Sync</var>
+						</conj>
+					</conj>
+				</conj>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>
