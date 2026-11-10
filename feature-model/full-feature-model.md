@@ -1,0 +1,377 @@
+# Complete Digital Twin Feature Model
+
+This file is generated from the FeatureIDE source model:
+
+- `DT-Builder-VariabilityModel/FeatureModelDT_v2/model.xml`
+
+Use this Markdown view when GitHub's XML preview is too hard to read. The FeatureIDE XML remains the editable source of truth.
+
+## Legend
+
+- `[M]` means the feature edge is mandatory when its parent is selected.
+- `[O]` means the feature edge is optional when its parent is selected.
+- `and group` means all mandatory children are required and optional children may be selected.
+- `or group` means one or more child features may be selected.
+- `xor group` means exactly one alternative child may be selected.
+
+## Feature Hierarchy
+
+- [M] `Digital_Twin_Builder_v2` (and group, abstract)
+  - [M] `Twinning_System` (and group)
+    - [M] `Digital_Model` (and group)
+      - [M] `Modeling_Formalisms` (or group)
+        - [O] `CBD`
+        - [O] `Cellular_Automata`
+        - [O] `StateCharts`
+        - [O] `Simulink`
+        - [O] `Petri_Nets`
+        - [O] `Timed_Automata`
+        - [O] `Event_Scheduling_Discrete_Event`
+        - [O] `DEVS`
+        - [O] `Three_Phase_Discrete_Event`
+        - [O] `Finite_State_Machines`
+        - [O] `Hybrid_Automata`
+        - [O] `Modelica`
+        - [O] `SysML`
+        - [O] `UML`
+        - [O] `BPMN`
+        - [O] `Formal_Methods`
+      - [O] `Data`
+      - [O] `Code_Generation`
+      - [O] `Data_Services` (or group)
+        - [O] `Data_Acquisition_and_Ingestion`
+        - [O] `Data_Streaming`
+        - [O] `Data_Transformation_Wrangling`
+        - [O] `Data_Contextualization`
+        - [O] `Batch_Processing`
+        - [O] `Real_Time_Processing`
+        - [O] `Data_Aggregation`
+        - [O] `Synthetic_Data_Generation`
+        - [O] `Ontology_Management`
+        - [O] `Temporal_Data_Store`
+        - [O] `Data_Storage_Archive_Services`
+        - [O] `Simulation_Model_Repository`
+        - [O] `AI_Model_Repository`
+    - [O] `Digital_Shadow` (and group)
+      - [O] `Real_Time_Sync`
+      - [O] `Partial_Data`
+      - [O] `Reasoning_System` (and group)
+        - [M] `Data_Processing`
+        - [O] `Optimization`
+        - [O] `Simulation` (or group)
+          - [O] `What_If_Analysis`
+          - [O] `Discrete_Event_Simulation`
+          - [O] `Agent_Based_Simulation`
+          - [O] `System_Dynamics_Simulation`
+          - [O] `Continuous_Simulation`
+          - [O] `Hybrid_Simulation`
+          - [O] `Physics_Based_Simulation`
+          - [O] `Monte_Carlo_Simulation`
+        - [M] `Reasoning_Model` (or group)
+          - [O] `Logic_Based_Reasoning`
+          - [O] `Rule_Based_Reasoning`
+          - [O] `Ontological_Reasoning`
+          - [O] `Artificial_Intelligence_AI`
+          - [O] `Fuzzy_Logic_Reasoning`
+          - [O] `Probabilistic_Reasoning`
+          - [O] `ML_Based_Reasoning`
+          - [O] `Reinforcement_Learning_Reasoning`
+        - [O] `Types_of_Reasoning` (or group)
+          - [O] `Anomaly_Detection`
+          - [O] `Predictive_Maintenance`
+          - [O] `Diagnosis`
+          - [O] `Failure_Prediction`
+          - [O] `Asset_Health_Estimation`
+          - [O] `Pattern_Recognition`
+        - [O] `Analysis`
+    - [O] `Digital_Twin` (and group)
+      - [M] `Feedback_Loop` (or group)
+        - [O] `Human_Actuated`
+        - [O] `Autonomous`
+        - [O] `Human_Supervised`
+    - [O] `Extended_Twinning_Types` (or group)
+      - [O] `Cognitive_Twin`
+      - [O] `Hybrid_Twin`
+      - [O] `Federated_Twin`
+      - [O] `Minimal_Twin`
+      - [O] `Twined_System`
+  - [M] `Cyber_Physical_System` (and group)
+    - [M] `Computation_Model` (or group)
+      - [O] `Single_Board_Computer`
+      - [O] `Single_Board_Controller`
+      - [O] `Micro_Processor`
+      - [O] `Emulator`
+      - [O] `Industrial_PLC`
+      - [O] `FPGA`
+      - [O] `DSP`
+      - [O] `GPU`
+      - [O] `Edge_AI_Accelerator`
+    - [M] `System_Type` (or group)
+      - [O] `High_Level` (and group)
+        - [M] `Protocols`
+        - [M] `Hardware_Components`
+      - [O] `Low_Level` (or group)
+        - [O] `Actuator` (or group)
+          - [O] `LED`
+          - [O] `Alarm`
+          - [O] `Buzzer`
+          - [O] `Servo_Motor`
+          - [O] `DC_Motor`
+          - [O] `AC_Motor`
+          - [O] `Stepper_Motor`
+          - [O] `Linear_Motor`
+          - [O] `Pneumatic_Actuator`
+          - [O] `Hydraulic_Actuator`
+          - [O] `Solenoid_Valve`
+          - [O] `Relay`
+          - [O] `Piezoelectric_Actuator`
+        - [O] `Sensors` (or group)
+          - [O] `Flame_Sensor`
+          - [O] `Heat_Sensor`
+          - [O] `Ultrasonic_Sensor`
+          - [O] `PIR_Sensor`
+          - [O] `LDR_Sensor`
+          - [O] `Vibration_Sensor`
+          - [O] `Temperature_Sensor`
+          - [O] `Proximity_Sensor`
+          - [O] `Humidity_Sensor`
+          - [O] `Gas_Sensor`
+          - [O] `Pressure_Sensor`
+          - [O] `IMU_Sensor`
+          - [O] `LiDAR`
+          - [O] `Radar`
+          - [O] `RFID`
+          - [O] `Camera_Sensor`
+        - [O] `Logic_Model` (or group)
+          - [O] `Manual_Code`
+          - [O] `Generated_Code` (or group)
+            - [O] `Model_To_Code`
+            - [O] `AI_Enabled_Code_Generation`
+  - [M] `Architecture_System` (and group)
+    - [M] `Architecture_Concepts` (or group)
+      - [O] `Platform_Stack_Architectural_Framework`
+      - [O] `RAMI_4_0`
+      - [O] `IIRA`
+      - [O] `Unified_Architecture_Framework`
+      - [O] `OPC_UA_Reference_Architecture`
+      - [O] `AAS_Reference_Architecture`
+      - [O] `TOGAF`
+      - [O] `NIST_Framework`
+      - [O] `ISO_23247_Framework`
+      - [O] `Digital_Twin_as_a_Service`
+      - [O] `Five_Dimension_DT_Model`
+      - [O] `Eight_Dimension_DT_Model`
+      - [O] `Layered_Architecture`
+      - [O] `Modular_Service_Oriented_Architecture`
+      - [O] `Federated_Digital_Twin_Architecture`
+      - [O] `Standard_Based_Architecture`
+      - [O] `Platform_Architecture`
+      - [O] `Cloud_Stack_Architecture`
+      - [O] `IoT_Based_Architecture`
+  - [M] `Deployment_Runtime` (and group)
+    - [M] `Deployment_Layers` (or group)
+      - [O] `Edge_Layer`
+      - [O] `Fog_Layer`
+      - [O] `Cloud_Layer`
+      - [O] `Hybrid_Edge_Fog_Cloud`
+    - [O] `Operating_System` (or group)
+      - [O] `General_Purpose_OS`
+      - [O] `Real_Time_OS`
+      - [O] `Linux_Embedded`
+      - [O] `Windows_IoT`
+      - [O] `ROS`
+      - [O] `Hypervisor_OS`
+    - [O] `Runtime_Orchestration` (or group)
+      - [O] `Docker`
+      - [O] `Kubernetes`
+      - [O] `Kubernetes_Edge`
+      - [O] `Node_RED`
+      - [O] `Home_Assistant`
+    - [O] `Time_Synchronization` (or group)
+      - [O] `NTP`
+      - [O] `PTP`
+      - [O] `TSN`
+  - [O] `User_Interface` (or group)
+    - [O] `Dashboard` (and group)
+      - [M] `Wrapper_Code`
+      - [M] `Logic_Model_Code`
+      - [O] `Static_Dashboard`
+      - [O] `Interactive_Dashboard`
+    - [O] `App` (and group)
+      - [M] `Platform` (or group)
+        - [O] `Android`
+        - [O] `IOS`
+        - [O] `Web`
+    - [O] `Immersive_Visualization` (or group)
+      - [O] `Three_D_Rendering`
+      - [O] `Augmented_Reality_AR`
+      - [O] `Virtual_Reality_VR`
+      - [O] `Gaming_Engine_Visualization`
+      - [O] `Virtual_Prototyping`
+  - [M] `Connectivity_System` (and group)
+    - [M] `NetworkStorage` (or group)
+      - [O] `Local_Storage` (or group)
+        - [O] `Local_Network`
+        - [O] `In_House_Server`
+      - [O] `Cloud_Integration` (or group)
+        - [O] `AWS`
+        - [O] `Azure`
+        - [O] `GCP`
+        - [O] `Custom_Cloud`
+        - [O] `AWS_IoT_TwinMaker`
+        - [O] `Azure_Digital_Twins`
+        - [O] `Eclipse_Ditto`
+        - [O] `FIWARE`
+        - [O] `PTC_ThingWorx`
+        - [O] `Siemens_MindSphere`
+        - [O] `GE_Predix`
+    - [O] `DataStorage` (or group)
+      - [O] `On_Board`
+      - [O] `Online`
+    - [O] `Communication_Protocols` (or group)
+      - [O] `MQTT`
+      - [O] `Modbus`
+      - [O] `WebSocket`
+      - [O] `HTTP`
+      - [O] `CustomProtocol`
+      - [O] `OPC_UA`
+      - [O] `AAS`
+      - [O] `AMQP`
+      - [O] `DDS`
+      - [O] `CoAP`
+      - [O] `CAN_Bus`
+      - [O] `EtherCAT`
+      - [O] `PROFINET`
+      - [O] `RS_485`
+      - [O] `I2C`
+      - [O] `SPI`
+      - [O] `UART`
+      - [O] `Bluetooth_LE`
+      - [O] `Zigbee`
+      - [O] `LoRaWAN`
+      - [O] `NB_IoT`
+  - [M] `Data_Integration_System` (and group)
+    - [M] `Integration_Patterns` (or group)
+      - [O] `Streaming_Integration`
+      - [O] `Batch_Integration`
+      - [O] `Event_Driven_Integration`
+      - [O] `Hybrid_Integration`
+      - [O] `API_Based_Integration`
+      - [O] `Database_Federation`
+      - [O] `File_Based_Integration`
+      - [O] `Message_Queue_Integration`
+      - [O] `Webhook_Based_Integration`
+      - [O] `ETL_Pipeline`
+      - [O] `Change_Data_Capture`
+    - [O] `Data_Representation` (or group)
+      - [O] `JSON`
+      - [O] `XML`
+      - [O] `YAML`
+      - [O] `CSV`
+      - [O] `HDF5`
+      - [O] `Parquet`
+      - [O] `Protocol_Buffers`
+      - [O] `Avro`
+      - [O] `JSON_LD`
+      - [O] `RDF`
+      - [O] `OWL`
+      - [O] `DTDL`
+      - [O] `AutomationML`
+  - [M] `Goal_and_Capability_System` (and group)
+    - [M] `Goal_Capabilities` (or group)
+      - [O] `Enterprise_System_Integration`
+      - [O] `Engineering_System_Integration`
+      - [O] `OT_IoT_System_Integration`
+      - [O] `Digital_Twin_Integration`
+      - [O] `API_Services`
+      - [O] `Edge_AI_Intelligence`
+      - [O] `Command_Control`
+      - [O] `Machine_Learning_ML`
+      - [O] `Federated_Learning`
+      - [O] `Orchestration_Workflow_Management`
+      - [O] `Alerts_Notifications`
+      - [O] `Reporting`
+      - [O] `Descriptive_Analytics`
+      - [O] `Diagnostic_Analytics`
+      - [O] `Prescriptive_Analytics`
+      - [O] `Continuous_Intelligence`
+      - [O] `Validation`
+    - [O] `Quality_Attributes` (or group)
+      - [O] `Availability`
+      - [O] `Reliability`
+      - [O] `Resilience`
+      - [O] `Performance`
+      - [O] `Trustworthiness`
+      - [O] `Safety`
+      - [O] `Privacy`
+      - [O] `Interoperability`
+      - [O] `Traceability`
+      - [O] `Evolution`
+    - [O] `Lifecycle_Capabilities` (or group)
+      - [O] `Device_Management`
+      - [O] `Data_Governance`
+      - [O] `Life_Cycle_Management`
+      - [O] `Product_Lifecycle_Management`
+      - [O] `Asset_Performance_Management`
+      - [O] `Digital_Product_Passport`
+      - [O] `Digital_Continuity`
+  - [O] `Security_System` (and group)
+    - [O] `Encryption`
+    - [O] `Anomaly_Alerts`
+    - [O] `Device_Security`
+    - [O] `Data_Encryption`
+    - [O] `Privacy_Protection`
+    - [O] `Access_Control` (and group)
+      - [M] `User_Roles`
+      - [O] `Audit_Logs`
+  - [O] `Standards_Compliance` (and group)
+    - [O] `Simulation_Standards` (or group)
+      - [O] `FMI`
+      - [O] `HLA`
+      - [O] `DSEEP`
+      - [O] `DIS`
+      - [O] `SSP`
+    - [O] `Modeling_Standards` (or group)
+      - [O] `ISO_IEC_19514_SysML`
+      - [O] `ISO_IEC_19505_UML`
+      - [O] `ISO_IEC_19510_BPMN`
+      - [O] `ArchiMate_Standard`
+    - [O] `Physical_Entity_Standards` (or group)
+      - [O] `IEEE_1451`
+      - [O] `ISO_23247_1`
+      - [O] `ISO_23247_2`
+      - [O] `ISO_23247_3`
+      - [O] `ISO_23247_4`
+      - [O] `IEC_61131`
+      - [O] `IEC_62541`
+      - [O] `IEC_62443`
+    - [O] `Service_Standards` (or group)
+      - [O] `OpenAPI`
+      - [O] `GraphQL`
+      - [O] `AsyncAPI`
+      - [O] `gRPC`
+    - [O] `Engineering_Standards` (or group)
+      - [O] `ISO_15288`
+      - [O] `ISO_12207`
+      - [O] `ISO_26262`
+      - [O] `CMMI`
+
+## Cross-Tree Constraints
+
+- `Digital_Shadow` requires `Data` and `Data_Acquisition_and_Ingestion`.
+- `Digital_Twin` requires `Digital_Shadow` and `Command_Control`.
+- `Federated_Twin` requires `Federated_Digital_Twin_Architecture` and `Interoperability`.
+- `Cloud_Layer` requires `Cloud_Integration`.
+- `Edge_AI_Intelligence` requires `Edge_Layer`.
+- `IEC_62541` requires `OPC_UA`.
+- `ISO_IEC_19514_SysML` requires `SysML`.
+- `ISO_IEC_19505_UML` requires `UML`.
+- `ISO_IEC_19510_BPMN` requires `BPMN`.
+- `Hybrid_Edge_Fog_Cloud` requires `Edge_Layer`, `Fog_Layer`, and `Cloud_Layer`.
+- `Streaming_Integration` requires `Data_Streaming`.
+- `API_Based_Integration` requires `API_Services`.
+- `Cloud_Stack_Architecture` requires `Cloud_Layer`.
+- `Kubernetes_Edge` requires `Edge_Layer`.
+- `OpenAPI`, `GraphQL`, or `gRPC` requires `API_Services`.
+- `Data_Services` requires `Data`.
+- `Real_Time_Sync` requires `Real_Time_Processing`.

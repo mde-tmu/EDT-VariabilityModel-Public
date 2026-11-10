@@ -1,0 +1,837 @@
+[
+  {
+    "id": "W-A",
+    "expected": "SAT",
+    "selected": [
+      "SysML",
+      "Single_Board_Computer",
+      "High_Level",
+      "Low_Level",
+      "Proximity_Sensor",
+      "Temperature_Sensor",
+      "Humidity_Sensor",
+      "RFID",
+      "Manual_Code",
+      "Layered_Architecture",
+      "IoT_Based_Architecture",
+      "Edge_Layer",
+      "Cloud_Layer",
+      "Local_Network",
+      "GCP",
+      "MQTT",
+      "Streaming_Integration",
+      "API_Based_Integration",
+      "JSON",
+      "Data_Acquisition_and_Ingestion",
+      "Temporal_Data_Store",
+      "Dashboard",
+      "Interactive_Dashboard",
+      "Web",
+      "Access_Control",
+      "Audit_Logs",
+      "Encryption",
+      "Reporting",
+      "Alerts_Notifications",
+      "Linux_Embedded",
+      "Docker",
+      "Real_Time_Sync",
+      "Anomaly_Detection",
+      "Rule_Based_Reasoning",
+      "Digital_Twin",
+      "Human_Supervised",
+      "Command_Control",
+      "DC_Motor",
+      "Alarm",
+      "Servo_Motor",
+      "Relay",
+      "ISO_IEC_19514_SysML"
+    ],
+    "deselected": [
+      "Optimization"
+    ],
+    "rationale": "A supervised control service sends commands to the edge controller. Controller interlocks and override remain engineering responsibilities.",
+    "kind": "domain_scenario",
+    "export": "smart_warehouse"
+  },
+  {
+    "id": "S0-root",
+    "expected": "SAT",
+    "selected": [],
+    "deselected": [],
+    "rationale": "Initial configuration has no manual feature choices; mandatory structure propagates while groups remain unresolved.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S1-control-propagation",
+    "expected": "SAT",
+    "selected": [
+      "Digital_Twin"
+    ],
+    "deselected": [],
+    "rationale": "Requesting a command-capable twin implies the inward coupling, command capability, data and acquisition, but does not select a protocol or controller.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S2-read-only-conflict",
+    "expected": "UNSAT",
+    "selected": [
+      "Digital_Twin"
+    ],
+    "deselected": [
+      "Command_Control"
+    ],
+    "rationale": "A read-only control interface cannot implement automatic outward command coupling.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S3-read-only-repair",
+    "expected": "SAT",
+    "selected": [
+      "Digital_Shadow",
+      "Real_Time_Sync"
+    ],
+    "deselected": [
+      "Digital_Twin",
+      "Command_Control"
+    ],
+    "rationale": "Retain live observation and manual intervention at an external console by selecting a shadow.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S4-human-approval",
+    "expected": "SAT",
+    "selected": [
+      "Digital_Twin",
+      "Human_Actuated",
+      "Real_Time_Sync"
+    ],
+    "deselected": [],
+    "rationale": "Human authorization is compatible with live observation when software transmits the authorized command.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S5-non-real-time-command",
+    "expected": "SAT",
+    "selected": [
+      "Digital_Twin"
+    ],
+    "deselected": [
+      "Real_Time_Sync",
+      "Reasoning_System"
+    ],
+    "rationale": "Scheduled software command updates do not inherently require real-time synchronization or a reasoning engine.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S6-cpu-edge-ai",
+    "expected": "SAT",
+    "selected": [
+      "Edge_AI_Intelligence",
+      "Single_Board_Computer"
+    ],
+    "deselected": [
+      "Edge_AI_Accelerator"
+    ],
+    "rationale": "CPU inference at an edge node remains possible; acceleration depends on workload.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S7-formal-nonsafety",
+    "expected": "SAT",
+    "selected": [
+      "Formal_Methods"
+    ],
+    "deselected": [
+      "Safety",
+      "Validation"
+    ],
+    "rationale": "A formal specification can serve a non-safety task before a validation activity is selected.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S8-local-cloud",
+    "expected": "SAT",
+    "selected": [
+      "Local_Network",
+      "In_House_Server",
+      "Cloud_Layer",
+      "GCP"
+    ],
+    "deselected": [],
+    "rationale": "A full solution may combine a local network, local server and cloud history.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S9-mixed-asset-interfaces",
+    "expected": "SAT",
+    "selected": [
+      "High_Level",
+      "Low_Level",
+      "Temperature_Sensor"
+    ],
+    "deselected": [],
+    "rationale": "An engineering solution may integrate a black-box enterprise interface and a directly attached sensor.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S10-hybrid-missing-fog",
+    "expected": "UNSAT",
+    "selected": [
+      "Hybrid_Edge_Fog_Cloud"
+    ],
+    "deselected": [
+      "Fog_Layer"
+    ],
+    "rationale": "The explicitly three-layer profile cannot omit its fog layer.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S11-edge-cloud-repair",
+    "expected": "SAT",
+    "selected": [
+      "Edge_Layer",
+      "Cloud_Layer"
+    ],
+    "deselected": [
+      "Fog_Layer",
+      "Hybrid_Edge_Fog_Cloud"
+    ],
+    "rationale": "An edge-plus-cloud deployment is legal without the three-layer profile.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S12-sysml-missing-formalism",
+    "expected": "UNSAT",
+    "selected": [
+      "ISO_IEC_19514_SysML"
+    ],
+    "deselected": [
+      "SysML"
+    ],
+    "rationale": "Intending to use the SysML standard while ruling out all SysML use contradicts the standard feature definition.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S13-stream-service-missing",
+    "expected": "UNSAT",
+    "selected": [
+      "Streaming_Integration"
+    ],
+    "deselected": [
+      "Data_Streaming"
+    ],
+    "rationale": "A streaming pipeline must offer a streaming service regardless of transport.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "S14-federation-no-api-style",
+    "expected": "SAT",
+    "selected": [
+      "Federated_Twin",
+      "DDS"
+    ],
+    "deselected": [
+      "API_Based_Integration",
+      "API_Services"
+    ],
+    "rationale": "Federation need not use the selected API service style; transport-based integration remains possible.",
+    "kind": "domain_scenario",
+    "export": ""
+  },
+  {
+    "id": "C1-Digital_Shadow-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Digital_Shadow"
+    ],
+    "deselected": [
+      "Data"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C1-Digital_Shadow-2-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Digital_Shadow"
+    ],
+    "deselected": [
+      "Data_Acquisition_and_Ingestion"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C1-Digital_Shadow-accept",
+    "expected": "SAT",
+    "selected": [
+      "Digital_Shadow",
+      "Data",
+      "Data_Acquisition_and_Ingestion"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C2-Digital_Twin-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Digital_Twin"
+    ],
+    "deselected": [
+      "Digital_Shadow"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C2-Digital_Twin-2-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Digital_Twin"
+    ],
+    "deselected": [
+      "Command_Control"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C2-Digital_Twin-accept",
+    "expected": "SAT",
+    "selected": [
+      "Digital_Twin",
+      "Digital_Shadow",
+      "Command_Control"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C3-Federated_Twin-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Federated_Twin"
+    ],
+    "deselected": [
+      "Federated_Digital_Twin_Architecture"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C3-Federated_Twin-2-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Federated_Twin"
+    ],
+    "deselected": [
+      "Interoperability"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C3-Federated_Twin-accept",
+    "expected": "SAT",
+    "selected": [
+      "Federated_Twin",
+      "Federated_Digital_Twin_Architecture",
+      "Interoperability"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C4-Cloud_Layer-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Cloud_Layer"
+    ],
+    "deselected": [
+      "Cloud_Integration"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C4-Cloud_Layer-accept",
+    "expected": "SAT",
+    "selected": [
+      "Cloud_Layer",
+      "Cloud_Integration"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C5-Edge_AI_Intelligence-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Edge_AI_Intelligence"
+    ],
+    "deselected": [
+      "Edge_Layer"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C5-Edge_AI_Intelligence-accept",
+    "expected": "SAT",
+    "selected": [
+      "Edge_AI_Intelligence",
+      "Edge_Layer"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C7-IEC_62541-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "IEC_62541"
+    ],
+    "deselected": [
+      "OPC_UA"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C7-IEC_62541-accept",
+    "expected": "SAT",
+    "selected": [
+      "IEC_62541",
+      "OPC_UA"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C8-ISO_IEC_19514_SysML-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "ISO_IEC_19514_SysML"
+    ],
+    "deselected": [
+      "SysML"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C8-ISO_IEC_19514_SysML-accept",
+    "expected": "SAT",
+    "selected": [
+      "ISO_IEC_19514_SysML",
+      "SysML"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C9-ISO_IEC_19505_UML-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "ISO_IEC_19505_UML"
+    ],
+    "deselected": [
+      "UML"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C9-ISO_IEC_19505_UML-accept",
+    "expected": "SAT",
+    "selected": [
+      "ISO_IEC_19505_UML",
+      "UML"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C10-ISO_IEC_19510_BPMN-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "ISO_IEC_19510_BPMN"
+    ],
+    "deselected": [
+      "BPMN"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C10-ISO_IEC_19510_BPMN-accept",
+    "expected": "SAT",
+    "selected": [
+      "ISO_IEC_19510_BPMN",
+      "BPMN"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C11-Hybrid_Edge_Fog_Cloud-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Hybrid_Edge_Fog_Cloud"
+    ],
+    "deselected": [
+      "Edge_Layer"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C11-Hybrid_Edge_Fog_Cloud-2-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Hybrid_Edge_Fog_Cloud"
+    ],
+    "deselected": [
+      "Fog_Layer"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C11-Hybrid_Edge_Fog_Cloud-3-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Hybrid_Edge_Fog_Cloud"
+    ],
+    "deselected": [
+      "Cloud_Layer"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C11-Hybrid_Edge_Fog_Cloud-accept",
+    "expected": "SAT",
+    "selected": [
+      "Hybrid_Edge_Fog_Cloud",
+      "Edge_Layer",
+      "Fog_Layer",
+      "Cloud_Layer"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C12-Streaming_Integration-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Streaming_Integration"
+    ],
+    "deselected": [
+      "Data_Streaming"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C12-Streaming_Integration-accept",
+    "expected": "SAT",
+    "selected": [
+      "Streaming_Integration",
+      "Data_Streaming"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C13-API_Based_Integration-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "API_Based_Integration"
+    ],
+    "deselected": [
+      "API_Services"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C13-API_Based_Integration-accept",
+    "expected": "SAT",
+    "selected": [
+      "API_Based_Integration",
+      "API_Services"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C14-Cloud_Stack_Architecture-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Cloud_Stack_Architecture"
+    ],
+    "deselected": [
+      "Cloud_Layer"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C14-Cloud_Stack_Architecture-accept",
+    "expected": "SAT",
+    "selected": [
+      "Cloud_Stack_Architecture",
+      "Cloud_Layer"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C15-Kubernetes_Edge-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Kubernetes_Edge"
+    ],
+    "deselected": [
+      "Edge_Layer"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C15-Kubernetes_Edge-accept",
+    "expected": "SAT",
+    "selected": [
+      "Kubernetes_Edge",
+      "Edge_Layer"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C16-OpenAPI-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "OpenAPI"
+    ],
+    "deselected": [
+      "API_Services"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C16-OpenAPI-accept",
+    "expected": "SAT",
+    "selected": [
+      "OpenAPI",
+      "API_Services"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C16-GraphQL-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "GraphQL"
+    ],
+    "deselected": [
+      "API_Services"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C16-GraphQL-accept",
+    "expected": "SAT",
+    "selected": [
+      "GraphQL",
+      "API_Services"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C16-gRPC-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "gRPC"
+    ],
+    "deselected": [
+      "API_Services"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C16-gRPC-accept",
+    "expected": "SAT",
+    "selected": [
+      "gRPC",
+      "API_Services"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C17-Data_Services-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Data_Services"
+    ],
+    "deselected": [
+      "Data"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C17-Data_Services-accept",
+    "expected": "SAT",
+    "selected": [
+      "Data_Services",
+      "Data"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "C18-Real_Time_Sync-1-reject",
+    "expected": "UNSAT",
+    "selected": [
+      "Real_Time_Sync"
+    ],
+    "deselected": [
+      "Real_Time_Processing"
+    ],
+    "kind": "enforcement",
+    "rationale": "Checks encoded implication only; not independent domain validation.",
+    "export": ""
+  },
+  {
+    "id": "C18-Real_Time_Sync-accept",
+    "expected": "SAT",
+    "selected": [
+      "Real_Time_Sync",
+      "Real_Time_Processing"
+    ],
+    "deselected": [],
+    "kind": "enforcement",
+    "rationale": "Checks that the prerequisite combination admits completion.",
+    "export": ""
+  },
+  {
+    "id": "E1-VirtualSmartHome",
+    "expected": "SAT",
+    "selected": [
+      "JSON",
+      "Synthetic_Data_Generation",
+      "Pressure_Sensor",
+      "Camera_Sensor",
+      "Three_D_Rendering",
+      "Gaming_Engine_Visualization",
+      "Machine_Learning_ML",
+      "Simulation"
+    ],
+    "deselected": [],
+    "kind": "external_partial_mapping",
+    "export": "",
+    "rationale": "Only positive documented concerns; offline simulation is mapped approximately and its inherited shadow prerequisite is a semantic mismatch, not evidence of automatic physical coupling."
+  },
+  {
+    "id": "E2-OpenTwins-irrigation",
+    "expected": "SAT",
+    "selected": [
+      "Eclipse_Ditto",
+      "Dashboard",
+      "Three_D_Rendering",
+      "API_Based_Integration",
+      "Temporal_Data_Store",
+      "Simulation",
+      "Physics_Based_Simulation",
+      "JSON",
+      "Streaming_Integration"
+    ],
+    "deselected": [],
+    "kind": "external_partial_mapping",
+    "export": "",
+    "rationale": "Only positive documented concerns; no deployment location, controller family, protocol, physical command loop or clock guarantee inferred from absent reporting."
+  }
+]

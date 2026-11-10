@@ -1,0 +1,586 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false" />
+		<graphics key="legendposition" value="-1965,40" />
+		<graphics key="legendautolayout" value="false" />
+		<graphics key="showconstraints" value="true" />
+		<graphics key="showshortnames" value="false" />
+		<graphics key="layout" value="horizontal" />
+		<graphics key="showcollapsedconstraints" value="false" />
+		<graphics key="legendhidden" value="true" />
+		<calculations key="runcalculationsautomatically" value="false" />
+		<graphics key="layoutalgorithm" value="1" />
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Digital_Twin_Builder_v2">
+			<and mandatory="true" name="Twinning_System">
+				<graphics key="collapsed" value="false" />
+				<and mandatory="true" name="Digital_Model">
+					<graphics key="collapsed" value="true" />
+					<or mandatory="true" name="Modeling_Formalisms">
+						<graphics key="collapsed" value="true" />
+						<feature name="CBD" />
+						<feature name="Cellular_Automata" />
+						<feature name="StateCharts" />
+						<feature name="Simulink" />
+						<feature name="Petri_Nets" />
+						<feature name="Timed_Automata" />
+						<feature name="Event_Scheduling_Discrete_Event" />
+						<feature name="DEVS" />
+						<feature name="Three_Phase_Discrete_Event" />
+						<feature name="Finite_State_Machines" />
+						<feature name="Hybrid_Automata" />
+						<feature name="Modelica" />
+						<feature name="SysML" />
+						<feature name="UML" />
+						<feature name="BPMN" />
+						<feature name="Formal_Methods" />
+					</or>
+					<feature name="Data" />
+					<feature name="Code_Generation" />
+					<or name="Data_Services">
+						<graphics key="collapsed" value="true" />
+						<feature name="Data_Acquisition_and_Ingestion" />
+						<feature name="Data_Streaming" />
+						<feature name="Data_Transformation_Wrangling" />
+						<feature name="Data_Contextualization" />
+						<feature name="Batch_Processing" />
+						<feature name="Real_Time_Processing" />
+						<feature name="Data_Aggregation" />
+						<feature name="Synthetic_Data_Generation" />
+						<feature name="Ontology_Management" />
+						<feature name="Temporal_Data_Store" />
+						<feature name="Data_Storage_Archive_Services" />
+						<feature name="Simulation_Model_Repository" />
+						<feature name="AI_Model_Repository" />
+					</or>
+				</and>
+				<and name="Digital_Shadow">
+					<graphics key="collapsed" value="true" />
+					<feature name="Real_Time_Sync" />
+					<feature name="Partial_Data" />
+					<and name="Reasoning_System">
+						<graphics key="collapsed" value="true" />
+						<feature mandatory="true" name="Data_Processing" />
+						<feature name="Optimization" />
+						<or name="Simulation">
+							<graphics key="collapsed" value="true" />
+							<feature name="What_If_Analysis" />
+							<feature name="Discrete_Event_Simulation" />
+							<feature name="Agent_Based_Simulation" />
+							<feature name="System_Dynamics_Simulation" />
+							<feature name="Continuous_Simulation" />
+							<feature name="Hybrid_Simulation" />
+							<feature name="Physics_Based_Simulation" />
+							<feature name="Monte_Carlo_Simulation" />
+						</or>
+						<or mandatory="true" name="Reasoning_Model">
+							<graphics key="collapsed" value="true" />
+							<feature name="Logic_Based_Reasoning" />
+							<feature name="Rule_Based_Reasoning" />
+							<feature name="Ontological_Reasoning" />
+							<feature name="Artificial_Intelligence_AI" />
+							<feature name="Fuzzy_Logic_Reasoning" />
+							<feature name="Probabilistic_Reasoning" />
+							<feature name="ML_Based_Reasoning" />
+							<feature name="Reinforcement_Learning_Reasoning" />
+						</or>
+						<or name="Types_of_Reasoning">
+							<graphics key="collapsed" value="true" />
+							<feature name="Anomaly_Detection" />
+							<feature name="Predictive_Maintenance" />
+							<feature name="Diagnosis" />
+							<feature name="Failure_Prediction" />
+							<feature name="Asset_Health_Estimation" />
+							<feature name="Pattern_Recognition" />
+						</or>
+						<feature name="Analysis" />
+					</and>
+				</and>
+				<and name="Digital_Twin">
+					<graphics key="collapsed" value="true" />
+					<or mandatory="true" name="Feedback_Loop">
+						<graphics key="collapsed" value="true" />
+						<feature name="Human_Actuated" />
+						<feature name="Autonomous" />
+						<feature name="Human_Supervised" />
+					</or>
+				</and>
+				<or name="Extended_Twinning_Types">
+					<graphics key="collapsed" value="true" />
+					<feature name="Cognitive_Twin" />
+					<feature name="Hybrid_Twin" />
+					<feature name="Federated_Twin" />
+					<feature name="Minimal_Twin" />
+					<feature name="Twined_System" />
+				</or>
+			</and>
+			<and mandatory="true" name="Cyber_Physical_System">
+				<graphics key="collapsed" value="false" />
+				<or mandatory="true" name="Computation_Model">
+					<graphics key="collapsed" value="true" />
+					<feature name="Single_Board_Computer" />
+					<feature name="Single_Board_Controller" />
+					<feature name="Micro_Processor" />
+					<feature name="Emulator" />
+					<feature name="Industrial_PLC" />
+					<feature name="FPGA" />
+					<feature name="DSP" />
+					<feature name="GPU" />
+					<feature name="Edge_AI_Accelerator" />
+				</or>
+				<or mandatory="true" name="System_Type">
+					<graphics key="collapsed" value="true" />
+					<and name="High_Level">
+						<graphics key="collapsed" value="true" />
+						<feature mandatory="true" name="Protocols" />
+						<feature mandatory="true" name="Hardware_Components" />
+					</and>
+					<or name="Low_Level">
+						<graphics key="collapsed" value="true" />
+						<or name="Actuator">
+							<graphics key="collapsed" value="true" />
+							<feature name="LED" />
+							<feature name="Alarm" />
+							<feature name="Buzzer" />
+							<feature name="Servo_Motor" />
+							<feature name="DC_Motor" />
+							<feature name="AC_Motor" />
+							<feature name="Stepper_Motor" />
+							<feature name="Linear_Motor" />
+							<feature name="Pneumatic_Actuator" />
+							<feature name="Hydraulic_Actuator" />
+							<feature name="Solenoid_Valve" />
+							<feature name="Relay" />
+							<feature name="Piezoelectric_Actuator" />
+						</or>
+						<or name="Sensors">
+							<graphics key="collapsed" value="true" />
+							<feature name="Flame_Sensor" />
+							<feature name="Heat_Sensor" />
+							<feature name="Ultrasonic_Sensor" />
+							<feature name="PIR_Sensor" />
+							<feature name="LDR_Sensor" />
+							<feature name="Vibration_Sensor" />
+							<feature name="Temperature_Sensor" />
+							<feature name="Proximity_Sensor" />
+							<feature name="Humidity_Sensor" />
+							<feature name="Gas_Sensor" />
+							<feature name="Pressure_Sensor" />
+							<feature name="IMU_Sensor" />
+							<feature name="LiDAR" />
+							<feature name="Radar" />
+							<feature name="RFID" />
+							<feature name="Camera_Sensor" />
+						</or>
+						<or name="Logic_Model">
+							<graphics key="collapsed" value="true" />
+							<feature name="Manual_Code" />
+							<or name="Generated_Code">
+								<graphics key="collapsed" value="true" />
+								<feature name="Model_To_Code" />
+								<feature name="AI_Enabled_Code_Generation" />
+							</or>
+						</or>
+					</or>
+				</or>
+			</and>
+			<and mandatory="true" name="Architecture_System">
+				<graphics key="collapsed" value="false" />
+				<or mandatory="true" name="Architecture_Concepts">
+					<graphics key="collapsed" value="true" />
+					<feature name="Platform_Stack_Architectural_Framework" />
+					<feature name="RAMI_4_0" />
+					<feature name="IIRA" />
+					<feature name="Unified_Architecture_Framework" />
+					<feature name="OPC_UA_Reference_Architecture" />
+					<feature name="AAS_Reference_Architecture" />
+					<feature name="TOGAF" />
+					<feature name="NIST_Framework" />
+					<feature name="ISO_23247_Framework" />
+					<feature name="Digital_Twin_as_a_Service" />
+					<feature name="Five_Dimension_DT_Model" />
+					<feature name="Eight_Dimension_DT_Model" />
+					<feature name="Layered_Architecture" />
+					<feature name="Modular_Service_Oriented_Architecture" />
+					<feature name="Federated_Digital_Twin_Architecture" />
+					<feature name="Standard_Based_Architecture" />
+					<feature name="Platform_Architecture" />
+					<feature name="Cloud_Stack_Architecture" />
+					<feature name="IoT_Based_Architecture" />
+				</or>
+			</and>
+			<and mandatory="true" name="Deployment_Runtime">
+				<graphics key="collapsed" value="false" />
+				<or mandatory="true" name="Deployment_Layers">
+					<graphics key="collapsed" value="true" />
+					<feature name="Edge_Layer" />
+					<feature name="Fog_Layer" />
+					<feature name="Cloud_Layer" />
+					<feature name="Hybrid_Edge_Fog_Cloud" />
+				</or>
+				<or name="Operating_System">
+					<graphics key="collapsed" value="true" />
+					<feature name="General_Purpose_OS" />
+					<feature name="Real_Time_OS" />
+					<feature name="Linux_Embedded" />
+					<feature name="Windows_IoT" />
+					<feature name="ROS" />
+					<feature name="Hypervisor_OS" />
+				</or>
+				<or name="Runtime_Orchestration">
+					<graphics key="collapsed" value="true" />
+					<feature name="Docker" />
+					<feature name="Kubernetes" />
+					<feature name="Kubernetes_Edge" />
+					<feature name="Node_RED" />
+					<feature name="Home_Assistant" />
+				</or>
+				<or name="Time_Synchronization">
+					<graphics key="collapsed" value="true" />
+					<feature name="NTP" />
+					<feature name="PTP" />
+					<feature name="TSN" />
+				</or>
+			</and>
+			<or name="User_Interface">
+				<graphics key="collapsed" value="false" />
+				<and name="Dashboard">
+					<graphics key="collapsed" value="true" />
+					<feature mandatory="true" name="Wrapper_Code" />
+					<feature mandatory="true" name="Logic_Model_Code" />
+					<feature name="Static_Dashboard" />
+					<feature name="Interactive_Dashboard" />
+				</and>
+				<and name="App">
+					<graphics key="collapsed" value="true" />
+					<or mandatory="true" name="Platform">
+						<graphics key="collapsed" value="true" />
+						<feature name="Android" />
+						<feature name="IOS" />
+						<feature name="Web" />
+					</or>
+				</and>
+				<or name="Immersive_Visualization">
+					<graphics key="collapsed" value="true" />
+					<feature name="Three_D_Rendering" />
+					<feature name="Augmented_Reality_AR" />
+					<feature name="Virtual_Reality_VR" />
+					<feature name="Gaming_Engine_Visualization" />
+					<feature name="Virtual_Prototyping" />
+				</or>
+			</or>
+			<and mandatory="true" name="Connectivity_System">
+				<graphics key="collapsed" value="true" />
+				<or mandatory="true" name="NetworkStorage">
+					<graphics key="collapsed" value="true" />
+					<or name="Local_Storage">
+						<graphics key="collapsed" value="true" />
+						<feature name="Local_Network" />
+						<feature name="In_House_Server" />
+					</or>
+					<or name="Cloud_Integration">
+						<graphics key="collapsed" value="true" />
+						<feature name="AWS" />
+						<feature name="Azure" />
+						<feature name="GCP" />
+						<feature name="Custom_Cloud" />
+						<feature name="AWS_IoT_TwinMaker" />
+						<feature name="Azure_Digital_Twins" />
+						<feature name="Eclipse_Ditto" />
+						<feature name="FIWARE" />
+						<feature name="PTC_ThingWorx" />
+						<feature name="Siemens_MindSphere" />
+						<feature name="GE_Predix" />
+					</or>
+				</or>
+				<or name="DataStorage">
+					<graphics key="collapsed" value="true" />
+					<feature name="On_Board" />
+					<feature name="Online" />
+				</or>
+				<or name="Communication_Protocols">
+					<graphics key="collapsed" value="true" />
+					<feature name="MQTT" />
+					<feature name="Modbus" />
+					<feature name="WebSocket" />
+					<feature name="HTTP" />
+					<feature name="CustomProtocol" />
+					<feature name="OPC_UA" />
+					<feature name="AAS" />
+					<feature name="AMQP" />
+					<feature name="DDS" />
+					<feature name="CoAP" />
+					<feature name="CAN_Bus" />
+					<feature name="EtherCAT" />
+					<feature name="PROFINET" />
+					<feature name="RS_485" />
+					<feature name="I2C" />
+					<feature name="SPI" />
+					<feature name="UART" />
+					<feature name="Bluetooth_LE" />
+					<feature name="Zigbee" />
+					<feature name="LoRaWAN" />
+					<feature name="NB_IoT" />
+				</or>
+			</and>
+			<and mandatory="true" name="Data_Integration_System">
+				<graphics key="collapsed" value="false" />
+				<or mandatory="true" name="Integration_Patterns">
+					<graphics key="collapsed" value="true" />
+					<feature name="Streaming_Integration" />
+					<feature name="Batch_Integration" />
+					<feature name="Event_Driven_Integration" />
+					<feature name="Hybrid_Integration" />
+					<feature name="API_Based_Integration" />
+					<feature name="Database_Federation" />
+					<feature name="File_Based_Integration" />
+					<feature name="Message_Queue_Integration" />
+					<feature name="Webhook_Based_Integration" />
+					<feature name="ETL_Pipeline" />
+					<feature name="Change_Data_Capture" />
+				</or>
+				<or name="Data_Representation">
+					<graphics key="collapsed" value="true" />
+					<feature name="JSON" />
+					<feature name="XML" />
+					<feature name="YAML" />
+					<feature name="CSV" />
+					<feature name="HDF5" />
+					<feature name="Parquet" />
+					<feature name="Protocol_Buffers" />
+					<feature name="Avro" />
+					<feature name="JSON_LD" />
+					<feature name="RDF" />
+					<feature name="OWL" />
+					<feature name="DTDL" />
+					<feature name="AutomationML" />
+				</or>
+			</and>
+			<and mandatory="true" name="Goal_and_Capability_System">
+				<graphics key="collapsed" value="true" />
+				<or mandatory="true" name="Goal_Capabilities">
+					<graphics key="collapsed" value="true" />
+					<feature name="Enterprise_System_Integration" />
+					<feature name="Engineering_System_Integration" />
+					<feature name="OT_IoT_System_Integration" />
+					<feature name="Digital_Twin_Integration" />
+					<feature name="API_Services" />
+					<feature name="Edge_AI_Intelligence" />
+					<feature name="Command_Control" />
+					<feature name="Machine_Learning_ML" />
+					<feature name="Federated_Learning" />
+					<feature name="Orchestration_Workflow_Management" />
+					<feature name="Alerts_Notifications" />
+					<feature name="Reporting" />
+					<feature name="Descriptive_Analytics" />
+					<feature name="Diagnostic_Analytics" />
+					<feature name="Prescriptive_Analytics" />
+					<feature name="Continuous_Intelligence" />
+					<feature name="Validation" />
+				</or>
+				<or name="Quality_Attributes">
+					<graphics key="collapsed" value="true" />
+					<feature name="Availability" />
+					<feature name="Reliability" />
+					<feature name="Resilience" />
+					<feature name="Performance" />
+					<feature name="Trustworthiness" />
+					<feature name="Safety" />
+					<feature name="Privacy" />
+					<feature name="Interoperability" />
+					<feature name="Traceability" />
+					<feature name="Evolution" />
+				</or>
+				<or name="Lifecycle_Capabilities">
+					<graphics key="collapsed" value="true" />
+					<feature name="Device_Management" />
+					<feature name="Data_Governance" />
+					<feature name="Life_Cycle_Management" />
+					<feature name="Product_Lifecycle_Management" />
+					<feature name="Asset_Performance_Management" />
+					<feature name="Digital_Product_Passport" />
+					<feature name="Digital_Continuity" />
+				</or>
+			</and>
+			<and name="Security_System">
+				<graphics key="collapsed" value="true" />
+				<feature name="Encryption" />
+				<feature name="Anomaly_Alerts" />
+				<feature name="Device_Security" />
+				<feature name="Data_Encryption" />
+				<feature name="Privacy_Protection" />
+				<and name="Access_Control">
+					<graphics key="collapsed" value="true" />
+					<feature mandatory="true" name="User_Roles" />
+					<feature name="Audit_Logs" />
+				</and>
+			</and>
+			<and name="Standards_Compliance">
+				<graphics key="collapsed" value="true" />
+				<or name="Simulation_Standards">
+					<graphics key="collapsed" value="true" />
+					<feature name="FMI" />
+					<feature name="HLA" />
+					<feature name="DSEEP" />
+					<feature name="DIS" />
+					<feature name="SSP" />
+				</or>
+				<or name="Modeling_Standards">
+					<graphics key="collapsed" value="true" />
+					<feature name="ISO_IEC_19514_SysML" />
+					<feature name="ISO_IEC_19505_UML" />
+					<feature name="ISO_IEC_19510_BPMN" />
+					<feature name="ArchiMate_Standard" />
+				</or>
+				<or name="Physical_Entity_Standards">
+					<graphics key="collapsed" value="true" />
+					<feature name="IEEE_1451" />
+					<feature name="ISO_23247_1" />
+					<feature name="ISO_23247_2" />
+					<feature name="ISO_23247_3" />
+					<feature name="ISO_23247_4" />
+					<feature name="IEC_61131" />
+					<feature name="IEC_62541" />
+					<feature name="IEC_62443" />
+				</or>
+				<or name="Service_Standards">
+					<graphics key="collapsed" value="true" />
+					<feature name="OpenAPI" />
+					<feature name="GraphQL" />
+					<feature name="AsyncAPI" />
+					<feature name="gRPC" />
+				</or>
+				<or name="Engineering_Standards">
+					<graphics key="collapsed" value="true" />
+					<feature name="ISO_15288" />
+					<feature name="ISO_12207" />
+					<feature name="ISO_26262" />
+					<feature name="CMMI" />
+				</or>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>Digital_Shadow</var>
+				<conj>
+					<var>Data</var>
+					<var>Data_Acquisition_and_Ingestion</var>
+				</conj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Digital_Twin</var>
+				<conj>
+					<var>Digital_Shadow</var>
+					<var>Command_Control</var>
+				</conj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Federated_Twin</var>
+				<conj>
+					<var>Federated_Digital_Twin_Architecture</var>
+					<var>Interoperability</var>
+				</conj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Cloud_Layer</var>
+				<var>Cloud_Integration</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Edge_AI_Intelligence</var>
+				<var>Edge_Layer</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>IEC_62541</var>
+				<var>OPC_UA</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>ISO_IEC_19514_SysML</var>
+				<var>SysML</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>ISO_IEC_19505_UML</var>
+				<var>UML</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>ISO_IEC_19510_BPMN</var>
+				<var>BPMN</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Hybrid_Edge_Fog_Cloud</var>
+				<conj>
+					<var>Edge_Layer</var>
+					<var>Fog_Layer</var>
+					<var>Cloud_Layer</var>
+				</conj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Streaming_Integration</var>
+				<var>Data_Streaming</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>API_Based_Integration</var>
+				<var>API_Services</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Cloud_Stack_Architecture</var>
+				<var>Cloud_Layer</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Kubernetes_Edge</var>
+				<var>Edge_Layer</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<disj>
+					<var>OpenAPI</var>
+					<var>GraphQL</var>
+					<var>gRPC</var>
+				</disj>
+				<var>API_Services</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Data_Services</var>
+				<var>Data</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Real_Time_Sync</var>
+				<var>Real_Time_Processing</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

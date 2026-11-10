@@ -93,7 +93,7 @@ digraph FeatureModel {
   n87 [label="DSP", fillcolor="#bfe9f4"];
   n88 [label="GPU", fillcolor="#bfe9f4"];
   n89 [label="Edge_AI_Accelerator", fillcolor="#bfe9f4"];
-  n90 [label="System_Type\n(xor)", fillcolor="#bfe9f4"];
+  n90 [label="System_Type\n(or)", fillcolor="#bfe9f4"];
   n91 [label="High_Level\n(and)", fillcolor="#bfe9f4"];
   n92 [label="Protocols", fillcolor="#bfe9f4"];
   n93 [label="Hardware_Components", fillcolor="#bfe9f4"];
@@ -196,8 +196,8 @@ digraph FeatureModel {
   n190 [label="Gaming_Engine\nVisualization", fillcolor="#c9efbf"];
   n191 [label="Virtual_Prototyping", fillcolor="#c9efbf"];
   n192 [label="Connectivity_System\n(and)", fillcolor="#ffd1a6"];
-  n193 [label="NetworkStorage\n(xor)", fillcolor="#ffd1a6"];
-  n194 [label="Local_Storage\n(xor)", fillcolor="#ffd1a6"];
+  n193 [label="NetworkStorage\n(or)", fillcolor="#ffd1a6"];
+  n194 [label="Local_Storage\n(or)", fillcolor="#ffd1a6"];
   n195 [label="Local_Network", fillcolor="#ffd1a6"];
   n196 [label="In_House_Server", fillcolor="#ffd1a6"];
   n197 [label="Cloud_Integration\n(or)", fillcolor="#ffd1a6"];
@@ -212,7 +212,7 @@ digraph FeatureModel {
   n206 [label="PTC_ThingWorx", fillcolor="#ffd1a6"];
   n207 [label="Siemens_MindSphere", fillcolor="#ffd1a6"];
   n208 [label="GE_Predix", fillcolor="#ffd1a6"];
-  n209 [label="DataStorage\n(xor)", fillcolor="#ffd1a6"];
+  n209 [label="DataStorage\n(or)", fillcolor="#ffd1a6"];
   n210 [label="On_Board", fillcolor="#ffd1a6"];
   n211 [label="Online", fillcolor="#ffd1a6"];
   n212 [label="Communication_Protocols\n(or)", fillcolor="#ffd1a6"];
@@ -383,7 +383,7 @@ digraph FeatureModel {
   n36 -> n38 [label="O", style="dashed", penwidth=1.0];
   n36 -> n39 [label="O", style="dashed", penwidth=1.0];
   n39 -> n40 [label="M", style="solid", penwidth=1.5];
-  n39 -> n41 [label="M", style="solid", penwidth=1.5];
+  n39 -> n41 [label="O", style="dashed", penwidth=1.0];
   n39 -> n42 [label="O", style="dashed", penwidth=1.0];
   n42 -> n43 [label="O", style="dashed", penwidth=1.0];
   n42 -> n44 [label="O", style="dashed", penwidth=1.0];
