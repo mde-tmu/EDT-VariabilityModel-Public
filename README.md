@@ -35,6 +35,13 @@ The model is a FeatureIDE project. In Eclipse with FeatureIDE installed, use *Fi
 
 Both examples are configured on the same model. They are constructed engineering examples, not implemented systems.
 
+Each example can also be viewed as a tree of its selected features, without installing FeatureIDE:
+
+| Example | Zoomable SVG | High-resolution PNG | Graphviz DOT source |
+|---|---|---|---|
+| Smart warehouse | [SVG](feature-model/smart_warehouse-example.svg) | [PNG](feature-model/smart_warehouse-example.png) | [DOT](feature-model/smart_warehouse-example.dot) |
+| Smart home | [SVG](feature-model/smart_home-example.svg) | [PNG](feature-model/smart_home-example.png) | [DOT](feature-model/smart_home-example.dot) |
+
 ## Model Structure
 
 The root feature is `Digital_Twin_Builder_v2`. Its main subsystems are:
@@ -94,12 +101,14 @@ The rationale for each constraint is in [`evidence/constraint_rationale.json`](e
 
 ## Regenerating Visuals
 
-The Markdown and DOT views are generated from the FeatureIDE XML, and the DOT file is rendered with Graphviz:
+The Markdown and DOT views are generated from the FeatureIDE XML and the two example configurations, and each DOT file is rendered with Graphviz:
 
 ```sh
 python3 tools/generate_feature_model_artifacts.py
-dot -Tsvg feature-model/full-feature-model.dot -o feature-model/full-feature-model.svg
-dot -Tpng -Gdpi=220 feature-model/full-feature-model.dot -o feature-model/full-feature-model.png
+for name in full-feature-model smart_warehouse-example smart_home-example; do
+  dot -Tsvg feature-model/$name.dot -o feature-model/$name.svg
+  dot -Tpng -Gdpi=220 feature-model/$name.dot -o feature-model/$name.png
+done
 ```
 
 The SVG is the preferred artifact for inspection because it remains sharp when zoomed.

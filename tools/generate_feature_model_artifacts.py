@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 from pathlib import Path
-import textwrap
 import xml.etree.ElementTree as ET
 
 
@@ -13,6 +12,12 @@ MODEL_PATH = ROOT / "DT-Builder-VariabilityModel" / "FeatureModelDT_v2" / "model
 OUT_DIR = ROOT / "feature-model"
 MARKDOWN_PATH = OUT_DIR / "full-feature-model.md"
 DOT_PATH = OUT_DIR / "full-feature-model.dot"
+CONFIG_DIR = MODEL_PATH.parent / "configs"
+# example configurations drawn as trees of their selected features
+EXAMPLES = {
+    "smart_warehouse": "Smart Warehouse Example",
+    "smart_home": "Smart Home Example",
+}
 
 FEATURE_TAGS = {"and", "or", "alt", "feature"}
 
@@ -140,7 +145,18 @@ def dot_label(lines: list[str]) -> str:
     return "\\n".join(dot_escape_text(line) for line in lines)
 
 
-def collect_dot(element: ET.Element) -> tuple[list[str], list[str], list[str]]:
+def selected_features(config_path: Path) -> set[str]:
+    return {
+        feature.attrib["name"]
+        for feature in ET.parse(config_path).getroot()
+        if "selected" in (feature.attrib.get("manual"), feature.attrib.get("automatic"))
+    }
+
+
+def collect_dot(
+    element: ET.Element, selected: set[str] | None = None
+) -> tuple[list[str], list[str], list[str]]:
+    """Collect DOT nodes and edges; with `selected`, only those features are drawn."""
     nodes: list[str] = []
     edges: list[str] = []
     top_rank_nodes: list[str] = []
@@ -176,7 +192,8 @@ def collect_dot(element: ET.Element) -> tuple[list[str], list[str], list[str]]:
             )
 
         for child in feature_children(node):
-            walk(child, node_id, depth + 1, current_top)
+            if selected is None or child.attrib["name"] in selected:
+                walk(child, node_id, depth + 1, current_top)
         return node_id
 
     walk(element)
@@ -217,11 +234,16 @@ def write_markdown(root: ET.Element, model_root: ET.Element) -> None:
     MARKDOWN_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 
-def write_dot(root: ET.Element) -> None:
-    nodes, edges, top_rank_nodes = collect_dot(root)
+def write_dot(
+    root: ET.Element,
+    path: Path = DOT_PATH,
+    title: str = "Complete DT Feature Model",
+    selected: set[str] | None = None,
+) -> None:
+    nodes, edges, top_rank_nodes = collect_dot(root, selected)
     lines = [
         "digraph FeatureModel {",
-        '  graph [rankdir=TB, bgcolor="white", outputorder=edgesfirst, splines=polyline, nodesep=0.22, ranksep=0.55, margin=0.15, labelloc=t, label="Complete DT Feature Model", fontsize=28, fontname="Helvetica"];',
+        '  graph [rankdir=TB, bgcolor="white", outputorder=edgesfirst, splines=polyline, nodesep=0.22, ranksep=0.55, margin=0.15, labelloc=t, label="' + title + '", fontsize=28, fontname="Helvetica"];',
         '  node [shape=box, style="rounded,filled", color="#707070", fontname="Helvetica", fontsize=16, margin="0.08,0.05"];',
         '  edge [color="#777777", arrowsize=0.55, fontname="Helvetica", fontsize=11];',
         "",
@@ -233,7 +255,7 @@ def write_dot(root: ET.Element) -> None:
         lines.append("")
         lines.append("  { rank=same; " + " ".join(top_rank_nodes) + " }")
     lines.append("}")
-    DOT_PATH.write_text("\n".join(lines), encoding="utf-8")
+    path.write_text("\n".join(lines), encoding="utf-8")
 
 
 def main() -> None:
@@ -249,17 +271,19 @@ def main() -> None:
 
     write_markdown(root, model)
     write_dot(root)
+    dot_paths = [DOT_PATH]
+    for key, title in EXAMPLES.items():
+        selected = selected_features(CONFIG_DIR / f"{key}.xml")
+        dot_paths.append(OUT_DIR / f"{key}-example.dot")
+        write_dot(root, dot_paths[-1], f"{title} ({len(selected)} selected features)", selected)
     print(f"Wrote {MARKDOWN_PATH.relative_to(ROOT)}")
-    print(f"Wrote {DOT_PATH.relative_to(ROOT)}")
-    print(
-        textwrap.dedent(
-            f"""\
-            Next:
-              dot -Tsvg {DOT_PATH.relative_to(ROOT)} -o {OUT_DIR.relative_to(ROOT) / "full-feature-model.svg"}
-              dot -Tpng -Gdpi=220 {DOT_PATH.relative_to(ROOT)} -o {OUT_DIR.relative_to(ROOT) / "full-feature-model.png"}
-            """
-        ).strip()
-    )
+    for dot_path in dot_paths:
+        print(f"Wrote {dot_path.relative_to(ROOT)}")
+    print("Next, render each DOT file:")
+    for dot_path in dot_paths:
+        rel = dot_path.relative_to(ROOT)
+        print(f"  dot -Tsvg {rel} -o {rel.with_suffix('.svg')}")
+        print(f"  dot -Tpng -Gdpi=220 {rel} -o {rel.with_suffix('.png')}")
 
 
 if __name__ == "__main__":
